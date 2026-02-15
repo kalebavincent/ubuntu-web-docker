@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Installer les dépendances système, le bureau et les outils de construction d'ISO
 RUN apt-get update && apt-get install -y \
     xfce4 xfce4-goodies \
-    vnc4server novnc python3-websockify python3-numpy \
+    tightvncserver novnc python3-websockify python3-numpy \
     wget curl make mtools xorriso squashfs-tools \
     git neofetch \
     sudo \
