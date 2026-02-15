@@ -1,7 +1,6 @@
 services:
   windows-lab:
     build: .
-    image: msjpq/windows-in-docker:latest
     container_name: windows-lab
     environment:
       - TZ=Europe/Paris
@@ -10,5 +9,13 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./data:/data
+      - data:/data
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+volumes:
+  data:
