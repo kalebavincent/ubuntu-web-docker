@@ -11,4 +11,3 @@ services:
     privileged: true # Nécessaire pour monter des images loop lors de la construction d'ISO
     environment:
       - RESOLUTION=1280x720
-    restart: unless-stopped

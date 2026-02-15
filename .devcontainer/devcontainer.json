@@ -2,7 +2,13 @@
     "name": "Ubuntu Web Lab",
     "dockerComposeFile": "../docker-compose.yml",
     "service": "ubuntu-web",
-    "workspaceFolder": "/home/ubuntuweb/iso-builder",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {
+            "configureZsh": true,
+            "installZsh": true
+        }
+    },
     "customizations": {
         "vscode": {
             "extensions": [

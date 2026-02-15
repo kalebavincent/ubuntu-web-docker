@@ -13,8 +13,11 @@ RUN apt-get update && apt-get install -y \
     sudo \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Configurer l'utilisateur principal
-RUN useradd -m -s /bin/bash ubuntuweb && echo "ubuntuweb:ubuntuweb" | chpasswd && adduser ubuntuweb sudo
+# Configurer l'utilisateur principal avec sudo sans mot de passe
+RUN useradd -m -s /bin/bash ubuntuweb && \
+    echo "ubuntuweb:ubuntuweb" | chpasswd && \
+    adduser ubuntuweb sudo && \
+    echo "ubuntuweb ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Préparer noVNC
 RUN ln -s /usr/share/novnc/vnc.html /usr/share/novnc/index.html
