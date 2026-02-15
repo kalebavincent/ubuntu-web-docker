@@ -1,0 +1,13 @@
+# ISO files
+*.iso
+
+# Docker logs
+*.log
+
+# Temp files
+tmp/
+.vnc/passwd
+
+# System files
+.DS_Store
+Thumbs.db
